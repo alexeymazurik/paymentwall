@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Routing rules
+RewriteRule ^users$ index.php?go=users [L]
+RewriteRule ^users/new$ index.php?go=users&edit=new [L]
+RewriteRule ^users/([\d]+)$ index.php?go=users&id=$1 [L]
+RewriteRule ^users/([\d]+)/edit$ index.php?go=users&edit=edit&id=$1 [L]
+
+#RewriteRule ^login$ index.php?go=login [L]
+#RewriteRule ^account$ index.php?go=account [L]
+#RewriteRule ^signup$ index.php?go=signup [L]
+#RewriteRule ^methods$ index.php?go=methods [L]
+#RewriteRule ^payments$ index.php?go=payments [L]
+#RewriteRule ^payments/([\d]+)$ index.php?go=payments&type=$1 [L]
