@@ -35,6 +35,7 @@
 
             <div class="text-center">
                 <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+                <a class="btn btn-default btn-lg" href="<?= $urlBase ?>/users">Back</a>
             </div>
 
 
