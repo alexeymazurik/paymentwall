@@ -32,7 +32,6 @@ class Users extends Base
                     $this->user->deleteUser($_POST['id']);
                     break;
                 default:
-                    var_dump('DEFAULT');
                     break;
             }
         }

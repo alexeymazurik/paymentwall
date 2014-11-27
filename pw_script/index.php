@@ -23,12 +23,21 @@
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "UPDATE users  set coins = ? WHERE id = ?";
             $q = $pdo->prepare($sql);
-
             $result = $_GET['currency'] + $user['coins'];
-
             $q->execute(array($result, $user['id']));
+            if (isset($q)) {
+                echo "<h2>".json_encode(array("status" => "Successfully added ".$_GET['currency']." coins to user ".$user['username']."."))."</h2>";
+            }
             Database::disconnect();
+        }
+        else
+        {
+            echo "<h2>".json_encode(array("status" => "Signatures don't match"))."</h2>";
         }
 
 
+    }
+    else
+    {
+        echo "<h2>".json_encode(array("status" => "GET query input is incorrect"))."</h2>";
     }

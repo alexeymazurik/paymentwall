@@ -45,7 +45,6 @@ class User {
 
     public function addUser($data)
     {
-        var_dump($data);
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "INSERT INTO users (username, email, password, transaction_id, coins) values(?, ?, ?, ?, ?)";
